@@ -11,4 +11,6 @@ abstract class SearchEvent extends Equatable {
 class EventSearch extends SearchEvent{
   final String? title;
   const EventSearch({this.title});
+  @override
+  List<Object> get props => [title!];
 }

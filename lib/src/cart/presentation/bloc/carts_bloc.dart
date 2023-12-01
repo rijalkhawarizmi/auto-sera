@@ -15,22 +15,11 @@ class CartsBloc extends Bloc<CartsEvent, CartsState> {
   List<CartModel> listCarts = [];
   int item = 1;
   void _addCarts(AddCartEvent event, Emitter<CartsState> emit) {
-    // final states = state;
-    // if (states is ListCarts) {
-    //   listCarts.add(CartModel(title: event.title, price: event.price));
-    //   states.listCarts.addAll(listCarts);
-    //   listCarts.addAll(states.listCarts);
-    //   // listCarts.clear();
-    // }
-    // print('ada kah ${listCarts}');
-    // listCarts.forEach((e) {
-    //   print('${e.title}');
-    // });
-
-    // print('nilai $result');
     listCarts.add(CartModel(
-        title: event.title, price: event.price, quantity: event.quantity,image: event.image));
-    // print('haha ${listCarts}');
+        title: event.title,
+        price: event.price,
+        quantity: event.quantity,
+        image: event.image));
   }
 
   void _getCarts(EventGetCarts event, Emitter<CartsState> emit) {
@@ -39,8 +28,8 @@ class CartsBloc extends Bloc<CartsEvent, CartsState> {
 
   void _addItem(EventQuantity event, Emitter<CartsState> emit) {
     final states = state;
-    final haha = states is CartsCount ? states.quantity++ : 1;
-    print('hahah $haha');
-    emit(CartsCount(quantity: haha));
+    final count = states is CartsCount ? states.quantity++ : 1;
+
+    emit(CartsCount(quantity: count));
   }
 }
