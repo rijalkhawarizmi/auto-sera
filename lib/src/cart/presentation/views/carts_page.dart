@@ -203,7 +203,7 @@ class _CartsPageState extends State<CartsPage> {
                                                                   .black)),
                                                       child: Center(
                                                           child: Text(
-                                                        '+',
+                                                        '+', 
                                                         style: TextStyle(
                                                             fontSize: 20,
                                                             fontWeight:
